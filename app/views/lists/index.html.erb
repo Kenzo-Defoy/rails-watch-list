@@ -22,11 +22,26 @@
   </div>
 </div>
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
 
-<ul>
+
+<div class="container">
+<div class="row">
+
   <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list_path(list) %>
-    </li>
-  <% end %>
-</ul>
+  <div class="cards col-3 my-3" style="--bs-gap: 1rem;">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path("nkxvy5xd9fmqi4rujhky", width: 400, height: 300, crop: :fill) %>)">
+    <%= link_to list.name, list_path(list), class: "text-decoration-none text-reset" %>
+    <%= link_to "X", list_path(list), data: {turbo_method: :delete} %>
+    </div>
+  </div>
+  <% end  %>
+
+
+<%= cl_image_tag("nkxvy5xd9fmqi4rujhky", width: 400, height: 300, crop: :fill) %>
